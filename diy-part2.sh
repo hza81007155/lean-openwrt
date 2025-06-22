@@ -21,7 +21,7 @@ cd package
 #sed -i '$anet.core.rmem_max=2097152' base-files/files/etc/sysctl.d/10-default.conf
 
 #更改默认IP地址（150行）
-sed -i 's/192.168.1.1/192.168.2.1/' base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.10.11/' base-files/files/bin/config_generate
 
 #取消53端口防火墙规则（40-43行）
 sed -i '39,45s/echo/#echo/' lean/default-settings/files/zzz-default-settings
