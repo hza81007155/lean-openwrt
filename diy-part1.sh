@@ -14,16 +14,7 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-#echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-sed -i '1i src-git golang https://github.com/kenzok8/golang' feeds/packages/lang/golang.git
-sed -i '1i src-git small https://github.com/kenzok8/small' feeds.conf.default
-sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
-sed -i '1i src-git sbwml https://github.com/sbwml/luci-app-mosdns' feeds.conf.default
-sed -i '1i src-git xiaorouji https://github.com/xiaorouji/openwrt-passwall-packages' feeds.conf.default
-#sed -i '1i src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;luci' feeds.conf.default
-sed -i '1i src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
+ sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
 
-
-#echo 'src-git opluci https://git.openwrt.org/project/luci.git' >>feeds.conf.default
-#sed -i '1a src-git opluci https://git.openwrt.org/project/luci.git' feeds.conf.default
+# Remove conflicting plugins
+rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
