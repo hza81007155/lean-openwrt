@@ -23,6 +23,9 @@ cd package
 #更改默认IP地址（150行）
 sed -i 's/192.168.1.1/192.168.10.11/' base-files/files/bin/config_generate
 
+# 更改 Argon 主题背景
+cp -f $GITHUB_WORKSPACE/images/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+
 #取消53端口防火墙规则（40-43行）
 sed -i '39,45s/echo/#echo/' lean/default-settings/files/zzz-default-settings
 sed -i '/REDIRECT --to-ports 53/d'  lean/default-settings/files/zzz-default-settings
